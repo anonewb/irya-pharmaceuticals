@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Irya Pharmaceuticals LLP</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Dark Mode -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1f4fd8',
+            secondary: '#2ca24d',
+          },
+        },
+      },
+    }
+  </script>
+</head>
+
+<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100">
+
+<!-- ================= NAVBAR ================= -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur border-b">
+  <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+    <div class="flex items-center gap-3">
+      <img src="assets/logo.png" alt="Irya Logo" class="h-8">
+      <span class="font-semibold text-lg">Irya Pharmaceuticals LLP</span>
+    </div>
+
+    <div class="hidden md:flex gap-6">
+      <a href="#home" class="hover:text-primary">Home</a>
+      <a href="#solutions" class="hover:text-primary">Solutions</a>
+      <a href="#about" class="hover:text-primary">About</a>
+      <a href="#contact" class="hover:text-primary">Contact</a>
+    </div>
+
+    <button id="themeToggle" class="border rounded px-3 py-1 text-sm">
+      🌙
+    </button>
+  </nav>
+</header>
+
+<!-- ================= HOME ================= -->
+<section id="home" class="pt-32 pb-24 bg-gradient-to-br from-blue-50 to-white dark:from-gray-800 dark:to-gray-900">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+    <div>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">
+        Reliable Pharmaceutical Solutions
+      </h1>
+      <p class="text-lg mb-6">
+        Irya Pharmaceuticals LLP is committed to delivering high-quality pharmaceutical formulations with a focus on safety, consistency, and ethical practices.
+      </p>
+      <a href="#solutions" class="inline-block bg-primary text-white px-6 py-3 rounded hover:opacity-90">
+        Explore Solutions
+      </a>
+    </div>
+    <div class="hidden md:block">
+      <img src="assets/products-flyer.png" alt="Irya Pharmaceuticals Products" class="w-full h-auto rounded-xl shadow-lg">
+    </div>
+  </div>
+</section>
+
+<!-- ================= SOLUTIONS ================= -->
+<section id="solutions" class="py-24">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-3xl font-bold mb-12 text-center">Our Solutions</h2>
+
+    <div class="mb-12 flex justify-center">
+      <img src="assets/products-flyer.png" alt="Irya Pharmaceuticals Products - Pan-I 40 and On-I" class="w-full max-w-2xl h-auto rounded-xl shadow-lg">
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-10">
+      <div class="border rounded-xl p-6 hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2">Pantoprazole Sodium Gastro-Resistant Tablets IP</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Brand: Pan-I 40</p>
+        <p>
+          Used in the management of acid-related gastrointestinal conditions. Designed to help reduce gastric acid secretion.
+        </p>
+        <p class="mt-2 text-sm">Packaging: 10×10 Tablets</p>
+      </div>
+
+      <div class="border rounded-xl p-6 hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2">Ondansetron Orally Disintegrating Tablets IP</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Brand: On-I</p>
+        <p>
+          Commonly used to help prevent nausea and vomiting, with an orally disintegrating formulation for ease of use.
+        </p>
+        <p class="mt-2 text-sm">Packaging: 10×10 Tablets</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="py-24 bg-gray-50 dark:bg-gray-800">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold mb-6">About Us</h2>
+    <p>
+      Irya Pharmaceuticals LLP is a pharmaceutical organization focused on providing reliable and quality-driven healthcare products.
+      We emphasize ethical business practices, stringent quality standards, and long-term partnerships across the healthcare ecosystem.
+    </p>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="py-24">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10">
+    <div>
+      <h2 class="text-3xl font-bold mb-6">Contact Us</h2>
+
+      <form id="whatsappForm" class="space-y-4">
+        <input required placeholder="Name" class="w-full border rounded px-4 py-2">
+        <input required placeholder="Contact Number" class="w-full border rounded px-4 py-2">
+        <textarea required placeholder="Your Query" class="w-full border rounded px-4 py-2"></textarea>
+        <button type="submit" class="bg-secondary text-white px-6 py-3 rounded">
+          Send via WhatsApp
+        </button>
+      </form>
+
+      <p class="mt-4 text-sm">
+        Email: <a href="mailto:hphade96@gmail.com" class="text-primary">hphade96@gmail.com</a>
+      </p>
+    </div>
+
+    <div class="w-full h-80">
+      <iframe
+        class="w-full h-full rounded"
+        src="https://www.google.com/maps?q=Pune&output=embed"
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="py-6 border-t text-center text-sm">
+  © 2025 Irya Pharmaceuticals LLP · All rights reserved
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
