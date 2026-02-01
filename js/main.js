@@ -21,5 +21,5 @@ document.getElementById('whatsappForm').addEventListener('submit', e => {
   const [name, number, message] = [...inputs].map(i => i.value);
 
   const text = `Hello Irya Pharmaceuticals,%0AName: ${name}%0AContact: ${number}%0AQuery: ${message}`;
-  window.open(`https://wa.me/918097336135?text=${text}`, '_blank');
+  window.open(`https://wa.me/919156444882?text=${text}`, '_blank');
 });
