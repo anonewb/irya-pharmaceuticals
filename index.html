@@ -3,150 +3,458 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Irya Pharmaceuticals LLP</title>
+  <meta name="description" content="Irya Pharmaceuticals LLP — Your trusted global healthcare partner. Pharmaceutical trading, private label solutions, institutional supply & international exports from India." />
+  <title>Irya Pharmaceuticals LLP | Quality Healthcare Beyond Borders</title>
 
-  <!-- Tailwind CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Tailwind Dark Mode -->
   <script>
     tailwind.config = {
       darkMode: 'class',
       theme: {
         extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
           colors: {
-            primary: '#1f4fd8',
-            secondary: '#2ca24d',
+            brand: {
+              orange: '#E8621A',
+              purple: '#7C3AED',
+              blue: '#1f4fd8',
+              green: '#2ca24d',
+            },
           },
         },
       },
     }
   </script>
+  <style>
+    .hero-gradient {
+      background: linear-gradient(135deg, #eff6ff 0%, #fff7ed 50%, #ffffff 100%);
+    }
+    .dark .hero-gradient {
+      background: linear-gradient(135deg, #1e293b 0%, #1c1917 50%, #111827 100%);
+    }
+  </style>
 </head>
 
-<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100">
+<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100 font-sans">
 
 <!-- ================= NAVBAR ================= -->
-<header class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur border-b">
-  <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-    <div class="flex items-center gap-3">
-      <img src="assets/logo.png" alt="Irya Logo" class="h-8">
-      <span class="font-semibold text-lg">Irya Pharmaceuticals LLP</span>
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur border-b border-gray-200 dark:border-gray-700">
+  <nav class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3 gap-3">
+    <a href="#home" class="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
+      <img src="assets/logo.png" alt="Irya Pharmaceuticals logo" class="h-8 sm:h-9 shrink-0" />
+      <span class="font-semibold text-xs sm:text-base leading-snug">Irya Pharmaceuticals LLP</span>
+    </a>
+
+    <div class="hidden lg:flex items-center gap-6 text-sm font-medium">
+      <a href="#home" class="hover:text-brand-orange transition">Home</a>
+      <a href="#about" class="hover:text-brand-orange transition">About</a>
+      <a href="#why-us" class="hover:text-brand-orange transition">Why Us</a>
+      <a href="#portfolio" class="hover:text-brand-orange transition">Portfolio</a>
+      <a href="#products" class="hover:text-brand-orange transition">Products</a>
+      <a href="#contact" class="hover:text-brand-orange transition">Contact</a>
     </div>
 
-    <div class="hidden md:flex gap-6">
-      <a href="#home" class="hover:text-primary">Home</a>
-      <a href="#solutions" class="hover:text-primary">Solutions</a>
-      <a href="#about" class="hover:text-primary">About</a>
-      <a href="#contact" class="hover:text-primary">Contact</a>
+    <div class="flex items-center gap-2 shrink-0">
+      <button class="theme-toggle hidden lg:inline-flex border border-gray-300 dark:border-gray-600 rounded-lg px-3 py-1.5 text-sm" aria-label="Toggle dark mode">🌙</button>
+      <button id="menuToggle" class="lg:hidden border border-gray-300 dark:border-gray-600 rounded-lg p-2" aria-label="Open menu" aria-expanded="false">
+        <svg id="menuIcon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="closeIcon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
     </div>
-
-    <button id="themeToggle" class="border rounded px-3 py-1 text-sm">
-      🌙
-    </button>
   </nav>
-</header>
 
-<!-- ================= HOME ================= -->
-<section id="home" class="pt-32 pb-24 bg-gradient-to-br from-blue-50 to-white dark:from-gray-800 dark:to-gray-900">
-  <div class="max-w-7xl mx-auto px-6">
-    <div>
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">
-        Reliable Pharmaceutical Solutions
-      </h1>
-      <p class="text-lg mb-6">
-        Irya Pharmaceuticals LLP is committed to delivering high-quality pharmaceutical formulations with a focus on safety, consistency, and ethical practices.
-      </p>
-      <a href="#solutions" class="inline-block bg-primary text-white px-6 py-3 rounded hover:opacity-90">
-        Explore Solutions
-      </a>
+  <div id="mobileMenu" class="hidden lg:hidden border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1 text-sm font-medium">
+      <a href="#home" class="mobile-link py-2.5 hover:text-brand-orange">Home</a>
+      <a href="#about" class="mobile-link py-2.5 hover:text-brand-orange">About</a>
+      <a href="#why-us" class="mobile-link py-2.5 hover:text-brand-orange">Why Us</a>
+      <a href="#portfolio" class="mobile-link py-2.5 hover:text-brand-orange">Portfolio</a>
+      <a href="#products" class="mobile-link py-2.5 hover:text-brand-orange">Products</a>
+      <a href="#contact" class="mobile-link py-2.5 hover:text-brand-orange">Contact</a>
+      <button class="theme-toggle mt-3 flex items-center gap-2 py-2.5 text-gray-600 dark:text-gray-300 border-t border-gray-200 dark:border-gray-700 pt-4" aria-label="Toggle dark mode">
+        <span class="theme-icon">🌙</span>
+        <span>Toggle theme</span>
+      </button>
     </div>
   </div>
-</section>
+</header>
 
-<!-- ================= SOLUTIONS ================= -->
-<section id="solutions" class="py-24">
-  <div class="max-w-7xl mx-auto px-6">
-    <h2 class="text-3xl font-bold mb-12 text-center">Our Solutions</h2>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
-      <img src="assets/pan-i-40.png" alt="Pan-I 40 - Pantoprazole Sodium Gastro-Resistant Tablets" class="w-full h-auto rounded-xl shadow-lg order-0 md:order-0">
-      <div class="border rounded-xl p-6 hover:shadow-lg transition order-1 md:order-3">
-        <h3 class="text-xl font-semibold mb-2">Pantoprazole Sodium Gastro-Resistant Tablets IP</h3>
-        <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Brand: Pan-I 40</p>
-        <p>
-          Used in the management of acid-related gastrointestinal conditions. Designed to help reduce gastric acid secretion.
-        </p>
-        <p class="mt-2 text-sm">Packaging: 10×10 Tablets</p>
+<!-- ================= HERO ================= -->
+<section id="home" class="hero-gradient pt-28 sm:pt-32 pb-16 sm:pb-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="max-w-3xl">
+      <p class="text-brand-orange font-semibold text-sm sm:text-base mb-3 tracking-wide uppercase">Your Trusted Global Healthcare Partner</p>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4">
+        Delivering Quality. Building Trust. Improving Lives.
+      </h1>
+      <p class="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+        Irya Pharmaceuticals LLP is an India-based pharmaceutical company dedicated to delivering high-quality, affordable, and reliable healthcare products to global markets.
+      </p>
+      <p class="text-sm sm:text-base text-gray-500 dark:text-gray-400 mb-8 italic">
+        "Quality Healthcare Beyond Borders."
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a href="#about" class="inline-block bg-brand-orange text-white px-6 py-3 rounded-lg font-medium hover:opacity-90 transition">Learn About Us</a>
+        <a href="#contact" class="inline-block border-2 border-brand-blue text-brand-blue dark:text-blue-400 dark:border-blue-400 px-6 py-3 rounded-lg font-medium hover:bg-brand-blue hover:text-white dark:hover:text-white transition">Get in Touch</a>
       </div>
+    </div>
 
-      <img src="assets/on-i.png" alt="On-I - Ondansetron Orally Disintegrating Tablets" class="w-full h-auto rounded-xl shadow-lg order-2 md:order-1">
-      <div class="border rounded-xl p-6 hover:shadow-lg transition order-3 md:order-4">
-        <h3 class="text-xl font-semibold mb-2">Ondansetron Orally Disintegrating Tablets IP</h3>
-        <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Brand: On-I</p>
-        <p>
-          Commonly used to help prevent nausea and vomiting, with an orally disintegrating formulation for ease of use.
-        </p>
-        <p class="mt-2 text-sm">Packaging: 10×10 Tablets</p>
+    <div class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+      <div class="bg-white/80 dark:bg-gray-800/80 backdrop-blur rounded-xl p-4 text-center border border-gray-100 dark:border-gray-700">
+        <p class="text-xs sm:text-sm font-medium text-gray-500 dark:text-gray-400">Global Trading</p>
       </div>
-
-      <img src="assets/cap-i.jpeg" alt="Cap-I - Capecitabine Tablets IP 500mg" class="w-full h-auto rounded-xl shadow-lg order-4 md:order-2">
-      <div class="border rounded-xl p-6 hover:shadow-lg transition order-5 md:order-5">
-        <h3 class="text-xl font-semibold mb-2">Capecitabine Tablets IP 500mg</h3>
-        <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Brand: Cap-I</p>
-        <p>
-          Cap-I contains Capecitabine, a cytotoxic agent used for oral administration, primarily in the treatment of various cancers.
-        </p>
-        <p class="mt-2 text-sm">Packaging: 3×10 Tablets</p>
+      <div class="bg-white/80 dark:bg-gray-800/80 backdrop-blur rounded-xl p-4 text-center border border-gray-100 dark:border-gray-700">
+        <p class="text-xs sm:text-sm font-medium text-gray-500 dark:text-gray-400">Private Label</p>
+      </div>
+      <div class="bg-white/80 dark:bg-gray-800/80 backdrop-blur rounded-xl p-4 text-center border border-gray-100 dark:border-gray-700">
+        <p class="text-xs sm:text-sm font-medium text-gray-500 dark:text-gray-400">Institutional Supply</p>
+      </div>
+      <div class="bg-white/80 dark:bg-gray-800/80 backdrop-blur rounded-xl p-4 text-center border border-gray-100 dark:border-gray-700">
+        <p class="text-xs sm:text-sm font-medium text-gray-500 dark:text-gray-400">International Exports</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ================= ABOUT ================= -->
-<section id="about" class="py-24 bg-gray-50 dark:bg-gray-800">
-  <div class="max-w-4xl mx-auto px-6 text-center">
-    <h2 class="text-3xl font-bold mb-6">About Us</h2>
-    <p>
-      Irya Pharmaceuticals LLP is a pharmaceutical organization focused on providing reliable and quality-driven healthcare products.
-      We emphasize ethical business practices, stringent quality standards, and long-term partnerships across the healthcare ecosystem.
+<section id="about" class="py-16 sm:py-24 bg-gray-50 dark:bg-gray-800/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-12 sm:mb-16">
+      <h2 class="text-2xl sm:text-3xl font-bold mb-4">About Us</h2>
+      <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+        We specialize in pharmaceutical trading, international exports, private-label manufacturing, and institutional supply through a network of carefully selected manufacturing partners — bridging world-class Indian pharmaceutical manufacturing with the growing healthcare needs of international markets.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 mb-16">
+      <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 sm:p-8 border border-gray-100 dark:border-gray-700 shadow-sm">
+        <div class="w-10 h-10 rounded-lg bg-brand-blue/10 flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+        </div>
+        <h3 class="text-xl font-bold mb-3">Our Vision</h3>
+        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+          To become a globally respected pharmaceutical company delivering accessible, high-quality healthcare solutions while building enduring partnerships that improve lives across the world.
+        </p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 sm:p-8 border border-gray-100 dark:border-gray-700 shadow-sm">
+        <div class="w-10 h-10 rounded-lg bg-brand-orange/10 flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <h3 class="text-xl font-bold mb-3">Our Mission</h3>
+        <ul class="text-gray-600 dark:text-gray-300 space-y-2 text-sm sm:text-base">
+          <li class="flex gap-2"><span class="text-brand-orange shrink-0">•</span> Deliver safe, effective, and affordable pharmaceutical products.</li>
+          <li class="flex gap-2"><span class="text-brand-orange shrink-0">•</span> Build long-term partnerships with distributors and healthcare institutions worldwide.</li>
+          <li class="flex gap-2"><span class="text-brand-orange shrink-0">•</span> Maintain uncompromising standards of quality, compliance, and ethical business conduct.</li>
+          <li class="flex gap-2"><span class="text-brand-orange shrink-0">•</span> Expand global access to Indian pharmaceutical excellence through innovation, reliability, and customer-focused solutions.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="text-xl sm:text-2xl font-bold text-center mb-8">Our Core Values</h3>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+      <div class="bg-white dark:bg-gray-800 rounded-xl p-5 border border-gray-100 dark:border-gray-700">
+        <h4 class="font-semibold text-brand-orange mb-2">Integrity</h4>
+        <p class="text-sm text-gray-600 dark:text-gray-300">We conduct every business relationship with honesty, transparency, and professionalism.</p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-xl p-5 border border-gray-100 dark:border-gray-700">
+        <h4 class="font-semibold text-brand-purple mb-2">Quality</h4>
+        <p class="text-sm text-gray-600 dark:text-gray-300">We are committed to supplying products that meet internationally accepted quality standards.</p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-xl p-5 border border-gray-100 dark:border-gray-700">
+        <h4 class="font-semibold text-brand-blue mb-2">Reliability</h4>
+        <p class="text-sm text-gray-600 dark:text-gray-300">We strive to ensure consistent product availability, dependable service, and timely deliveries.</p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-xl p-5 border border-gray-100 dark:border-gray-700">
+        <h4 class="font-semibold text-brand-green mb-2">Innovation</h4>
+        <p class="text-sm text-gray-600 dark:text-gray-300">We continuously explore new products, markets, and healthcare solutions to meet evolving customer needs.</p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-xl p-5 border border-gray-100 dark:border-gray-700">
+        <h4 class="font-semibold text-brand-orange mb-2">Customer Partnership</h4>
+        <p class="text-sm text-gray-600 dark:text-gray-300">Our success is built on creating long-term, mutually beneficial relationships with our clients and partners.</p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-xl p-5 border border-gray-100 dark:border-gray-700">
+        <h4 class="font-semibold text-brand-purple mb-2">Global Responsibility</h4>
+        <p class="text-sm text-gray-600 dark:text-gray-300">We believe quality healthcare should be accessible beyond borders and work to support better health outcomes worldwide.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY CHOOSE US ================= -->
+<section id="why-us" class="py-16 sm:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-12 sm:mb-16">
+      <h2 class="text-2xl sm:text-3xl font-bold mb-3">Why Choose Irya Pharmaceuticals LLP?</h2>
+      <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Your Reliable Partner for Global Healthcare Solutions</p>
+      <p class="text-sm text-gray-500 dark:text-gray-400 max-w-3xl mx-auto mt-4 leading-relaxed">
+        At Irya Pharmaceuticals LLP, we believe that successful partnerships are built on trust, consistency, quality, and a shared commitment to improving healthcare. Our focus is not merely to supply pharmaceutical products, but to become a dependable long-term partner for importers, distributors, hospitals, pharmacy chains, and healthcare institutions across the world.
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+      <div class="group rounded-2xl p-6 border border-gray-100 dark:border-gray-700 hover:border-brand-orange/40 hover:shadow-lg transition bg-white dark:bg-gray-800">
+        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-brand-orange/10 text-brand-orange text-sm font-bold mb-4">1</span>
+        <h3 class="font-semibold mb-2">Quality You Can Trust</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-300">We collaborate with GMP-compliant manufacturing partners. Every product is sourced with a focus on quality, consistency, and compliance.</p>
+      </div>
+      <div class="group rounded-2xl p-6 border border-gray-100 dark:border-gray-700 hover:border-brand-purple/40 hover:shadow-lg transition bg-white dark:bg-gray-800">
+        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-brand-purple/10 text-brand-purple text-sm font-bold mb-4">2</span>
+        <h3 class="font-semibold mb-2">Comprehensive Portfolio</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-300">A diverse range spanning oncology, general medicines, nutraceuticals, and more — enabling consolidated sourcing through one partner.</p>
+      </div>
+      <div class="group rounded-2xl p-6 border border-gray-100 dark:border-gray-700 hover:border-brand-blue/40 hover:shadow-lg transition bg-white dark:bg-gray-800">
+        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-brand-blue/10 text-brand-blue text-sm font-bold mb-4">3</span>
+        <h3 class="font-semibold mb-2">Private Label & Contract Supply</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-300">Flexible private-label and contract supply solutions, allowing customers to market products under their own brand.</p>
+      </div>
+      <div class="group rounded-2xl p-6 border border-gray-100 dark:border-gray-700 hover:border-brand-green/40 hover:shadow-lg transition bg-white dark:bg-gray-800">
+        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-brand-green/10 text-brand-green text-sm font-bold mb-4">4</span>
+        <h3 class="font-semibold mb-2">Competitive Pricing</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-300">Leveraging India's pharmaceutical manufacturing hub to offer competitive pricing without compromising on quality.</p>
+      </div>
+      <div class="group rounded-2xl p-6 border border-gray-100 dark:border-gray-700 hover:border-brand-orange/40 hover:shadow-lg transition bg-white dark:bg-gray-800">
+        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-brand-orange/10 text-brand-orange text-sm font-bold mb-4">5</span>
+        <h3 class="font-semibold mb-2">Reliable Supply Chain</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-300">Timely deliveries, consistent availability, efficient order processing, and transparent communication throughout the supply cycle.</p>
+      </div>
+      <div class="group rounded-2xl p-6 border border-gray-100 dark:border-gray-700 hover:border-brand-purple/40 hover:shadow-lg transition bg-white dark:bg-gray-800">
+        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-brand-purple/10 text-brand-purple text-sm font-bold mb-4">6</span>
+        <h3 class="font-semibold mb-2">Customer-Centric Approach</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-300">We work closely with partners to understand market needs and deliver solutions that support long-term growth and mutual success.</p>
+      </div>
+      <div class="group rounded-2xl p-6 border border-gray-100 dark:border-gray-700 hover:border-brand-blue/40 hover:shadow-lg transition bg-white dark:bg-gray-800">
+        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-brand-blue/10 text-brand-blue text-sm font-bold mb-4">7</span>
+        <h3 class="font-semibold mb-2">Ethical Business Practices</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-300">Integrity is central to our operations — transparency, professionalism, and respect for applicable laws and regulations.</p>
+      </div>
+      <div class="group rounded-2xl p-6 border border-gray-100 dark:border-gray-700 hover:border-brand-green/40 hover:shadow-lg transition bg-white dark:bg-gray-800">
+        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-brand-green/10 text-brand-green text-sm font-bold mb-4">8</span>
+        <h3 class="font-semibold mb-2">Long-Term Partnership</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-300">We seek enduring relationships based on trust, reliability, and shared growth as a preferred sourcing and export partner.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRODUCT PORTFOLIO ================= -->
+<section id="portfolio" class="py-16 sm:py-24 bg-gray-50 dark:bg-gray-800/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-2xl sm:text-3xl font-bold mb-3">Comprehensive Product Portfolio</h2>
+      <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Designed to serve diverse healthcare needs — consolidate sourcing through a single, reliable partner.</p>
+    </div>
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+      <div class="bg-white dark:bg-gray-800 rounded-xl p-4 sm:p-5 text-center border border-gray-100 dark:border-gray-700 hover:shadow-md transition">
+        <p class="font-medium text-sm sm:text-base">Oncology</p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-xl p-4 sm:p-5 text-center border border-gray-100 dark:border-gray-700 hover:shadow-md transition">
+        <p class="font-medium text-sm sm:text-base">General Medicines</p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-xl p-4 sm:p-5 text-center border border-gray-100 dark:border-gray-700 hover:shadow-md transition">
+        <p class="font-medium text-sm sm:text-base">Anti-Infectives</p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-xl p-4 sm:p-5 text-center border border-gray-100 dark:border-gray-700 hover:shadow-md transition">
+        <p class="font-medium text-sm sm:text-base">Cardiovascular</p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-xl p-4 sm:p-5 text-center border border-gray-100 dark:border-gray-700 hover:shadow-md transition">
+        <p class="font-medium text-sm sm:text-base">Diabetes Care</p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-xl p-4 sm:p-5 text-center border border-gray-100 dark:border-gray-700 hover:shadow-md transition">
+        <p class="font-medium text-sm sm:text-base">Gastroenterology</p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-xl p-4 sm:p-5 text-center border border-gray-100 dark:border-gray-700 hover:shadow-md transition">
+        <p class="font-medium text-sm sm:text-base">Pain Management</p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-xl p-4 sm:p-5 text-center border border-brand-orange/30 hover:shadow-md transition">
+        <p class="font-medium text-sm sm:text-base text-brand-orange">Nutraceuticals</p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-xl p-4 sm:p-5 text-center border border-gray-100 dark:border-gray-700 hover:shadow-md transition">
+        <p class="font-medium text-sm sm:text-base">Dermatology & Skincare</p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-xl p-4 sm:p-5 text-center border border-gray-100 dark:border-gray-700 hover:shadow-md transition">
+        <p class="font-medium text-sm sm:text-base">Ayurvedic & Herbal</p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-xl p-4 sm:p-5 text-center border border-gray-100 dark:border-gray-700 hover:shadow-md transition">
+        <p class="font-medium text-sm sm:text-base">IV Fluids</p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 rounded-xl p-4 sm:p-5 text-center border border-gray-100 dark:border-gray-700 hover:shadow-md transition">
+        <p class="font-medium text-sm sm:text-base">Surgical & Hospital Consumables</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FEATURED PRODUCT: IRYACAL-D3 ================= -->
+<section class="py-16 sm:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-10 sm:mb-14">
+      <span class="inline-block text-brand-orange font-semibold text-sm uppercase tracking-wide mb-2">Featured Product</span>
+      <h2 class="text-2xl sm:text-3xl font-bold mb-3">
+        <span class="text-brand-orange">IRYACAL</span>-D3 Tablets
+      </h2>
+      <p class="text-gray-600 dark:text-gray-300">Calcium Citrate & Vitamin D3 Tablets — The Perfect Balance for Stronger Bones & Better Health</p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+      <div class="space-y-4">
+        <img src="assets/iryacal-d3-product.png" alt="IRYACAL-D3 Calcium Citrate and Vitamin D3 Tablets packaging" class="w-full rounded-2xl shadow-lg" loading="lazy" />
+        <img src="assets/iryacal-d3-flyer.png" alt="IRYACAL-D3 product information flyer" class="w-full rounded-2xl shadow-lg hidden sm:block" loading="lazy" />
+      </div>
+
+      <div class="space-y-6">
+        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+          IryaCal-D3 combines the superior bioavailability of Calcium Citrate with the strength of Vitamin D3 to support bone health, immunity, and overall well-being.
+        </p>
+
+        <div>
+          <h3 class="font-semibold mb-3 text-brand-purple">Key Benefits</h3>
+          <ul class="space-y-2 text-sm sm:text-base text-gray-600 dark:text-gray-300">
+            <li class="flex gap-2"><span class="text-brand-purple shrink-0">✓</span> Stronger bones & teeth with optimal calcium absorption</li>
+            <li class="flex gap-2"><span class="text-brand-purple shrink-0">✓</span> Vitamin D3 enhances calcium absorption and utilization</li>
+            <li class="flex gap-2"><span class="text-brand-purple shrink-0">✓</span> Supports muscle function and reduces cramps</li>
+            <li class="flex gap-2"><span class="text-brand-purple shrink-0">✓</span> Boosts immunity through Vitamin D3</li>
+            <li class="flex gap-2"><span class="text-brand-purple shrink-0">✓</span> Ideal for all ages — children, adults, pregnant & lactating women, and elderly</li>
+          </ul>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 border border-gray-100 dark:border-gray-700">
+            <h4 class="font-semibold text-sm mb-2">Composition (Per Tablet)</h4>
+            <ul class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 space-y-1">
+              <li>Calcium Citrate Malate USP: 1250 mg</li>
+              <li>Equivalent to Elemental Calcium: 250 mg</li>
+              <li>Vitamin D3: 250 IU</li>
+              <li>Excipients: q.s.</li>
+            </ul>
+          </div>
+          <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 border border-gray-100 dark:border-gray-700">
+            <h4 class="font-semibold text-sm mb-2">Dosage & Packaging</h4>
+            <ul class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 space-y-1">
+              <li>One tablet daily or as directed by physician</li>
+              <li>Pack Size: 10 × 10 Tablets (Alu-Alu Pack)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-sm mb-2">Indications</h4>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs bg-brand-orange/10 text-brand-orange px-3 py-1 rounded-full">Osteoporosis</span>
+            <span class="text-xs bg-brand-orange/10 text-brand-orange px-3 py-1 rounded-full">Calcium Deficiency</span>
+            <span class="text-xs bg-brand-orange/10 text-brand-orange px-3 py-1 rounded-full">Pregnancy & Lactation</span>
+            <span class="text-xs bg-brand-orange/10 text-brand-orange px-3 py-1 rounded-full">Growing Children</span>
+            <span class="text-xs bg-brand-orange/10 text-brand-orange px-3 py-1 rounded-full">Post Menopausal</span>
+            <span class="text-xs bg-brand-orange/10 text-brand-orange px-3 py-1 rounded-full">Fracture Healing</span>
+          </div>
+        </div>
+
+        <p class="text-brand-orange font-semibold italic">Small Tablet. Big Strength.</p>
+
+        <!-- Mobile-only flyer -->
+        <img src="assets/iryacal-d3-flyer.png" alt="IRYACAL-D3 product information flyer" class="w-full rounded-2xl shadow-lg sm:hidden" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= OUR PRODUCTS ================= -->
+<section id="products" class="py-16 sm:py-24 bg-gray-50 dark:bg-gray-800/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <h2 class="text-2xl sm:text-3xl font-bold mb-4 text-center">Our Products</h2>
+    <p class="text-center text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto">A selection from our pharmaceutical formulations portfolio.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      <article class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-lg transition">
+        <img src="assets/pan-i-40.png" alt="Pan-I 40 - Pantoprazole Sodium Gastro-Resistant Tablets" class="w-full h-48 sm:h-56 object-contain bg-gray-50 dark:bg-gray-900 p-4" loading="lazy" />
+        <div class="p-5 sm:p-6">
+          <h3 class="text-lg font-semibold mb-1">Pan-I 40</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Pantoprazole Sodium Gastro-Resistant Tablets IP</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Used in the management of acid-related gastrointestinal conditions. Designed to help reduce gastric acid secretion.</p>
+          <p class="mt-3 text-xs text-gray-500">Packaging: 10×10 Tablets</p>
+        </div>
+      </article>
+
+      <article class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-lg transition">
+        <img src="assets/on-i.png" alt="On-I - Ondansetron Orally Disintegrating Tablets" class="w-full h-48 sm:h-56 object-contain bg-gray-50 dark:bg-gray-900 p-4" loading="lazy" />
+        <div class="p-5 sm:p-6">
+          <h3 class="text-lg font-semibold mb-1">On-I</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Ondansetron Orally Disintegrating Tablets IP</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Commonly used to help prevent nausea and vomiting, with an orally disintegrating formulation for ease of use.</p>
+          <p class="mt-3 text-xs text-gray-500">Packaging: 10×10 Tablets</p>
+        </div>
+      </article>
+
+      <article class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-lg transition md:col-span-2 lg:col-span-1 md:max-w-md md:mx-auto lg:max-w-none">
+        <img src="assets/cap-i.jpeg" alt="Cap-I - Capecitabine Tablets IP 500mg" class="w-full h-48 sm:h-56 object-contain bg-gray-50 dark:bg-gray-900 p-4" loading="lazy" />
+        <div class="p-5 sm:p-6">
+          <h3 class="text-lg font-semibold mb-1">Cap-I</h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Capecitabine Tablets IP 500mg</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Cap-I contains Capecitabine, a cytotoxic agent used for oral administration, primarily in the treatment of various cancers.</p>
+          <p class="mt-3 text-xs text-gray-500">Packaging: 3×10 Tablets</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COMMITMENT ================= -->
+<section class="py-16 sm:py-20 bg-brand-blue text-white">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+    <h2 class="text-2xl sm:text-3xl font-bold mb-4">Our Commitment</h2>
+    <p class="text-lg sm:text-xl font-medium mb-6 opacity-95">
+      Quality Products. Competitive Value. Reliable Supply. Lasting Partnerships.
     </p>
+    <p class="text-sm sm:text-base opacity-90 leading-relaxed max-w-2xl mx-auto">
+      At Irya Pharmaceuticals LLP, we are committed to supporting better healthcare by delivering dependable pharmaceutical solutions that create value for our customers and contribute to healthier communities worldwide.
+    </p>
+    <p class="mt-6 text-brand-orange font-semibold italic text-lg">"Delivering Quality. Building Trust. Improving Lives."</p>
   </div>
 </section>
 
 <!-- ================= CONTACT ================= -->
-<section id="contact" class="py-24">
-  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10">
+<section id="contact" class="py-16 sm:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-10 lg:gap-16">
     <div>
-      <h2 class="text-3xl font-bold mb-6">Contact Us</h2>
+      <h2 class="text-2xl sm:text-3xl font-bold mb-2">Contact Us</h2>
+      <p class="text-gray-600 dark:text-gray-300 mb-6">Partner with us for reliable pharmaceutical solutions.</p>
 
       <form id="whatsappForm" class="space-y-4">
-        <input required placeholder="Name" class="w-full border rounded px-4 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 border-gray-300 dark:border-gray-600">
-        <input required placeholder="Contact Number" class="w-full border rounded px-4 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 border-gray-300 dark:border-gray-600">
-        <textarea required placeholder="Your Query" class="w-full border rounded px-4 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 border-gray-300 dark:border-gray-600"></textarea>
-        <button type="submit" class="bg-secondary text-white px-6 py-3 rounded">
+        <input required name="name" placeholder="Name" class="w-full border rounded-lg px-4 py-3 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-brand-orange/30 focus:border-brand-orange outline-none" />
+        <input required name="phone" type="tel" placeholder="Contact Number" class="w-full border rounded-lg px-4 py-3 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-brand-orange/30 focus:border-brand-orange outline-none" />
+        <textarea required name="message" rows="4" placeholder="Your Query" class="w-full border rounded-lg px-4 py-3 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-brand-orange/30 focus:border-brand-orange outline-none resize-y"></textarea>
+        <button type="submit" class="w-full sm:w-auto bg-brand-green text-white px-8 py-3 rounded-lg font-medium hover:opacity-90 transition">
           Send via WhatsApp
         </button>
       </form>
 
-      <p class="mt-4 text-sm">
-        Email: <a href="mailto:iryapharmaceuticalsllp@gmail.com" class="text-primary">iryapharmaceuticalsllp@gmail.com</a>
-      </p>
+      <div class="mt-6 space-y-2 text-sm">
+        <p>Email: <a href="mailto:iryapharmaceuticalsllp@gmail.com" class="text-brand-blue dark:text-blue-400 hover:underline">iryapharmaceuticalsllp@gmail.com</a></p>
+        <p>WhatsApp: <a href="https://wa.me/919156444882" class="text-brand-blue dark:text-blue-400 hover:underline">+91 91564 44882</a></p>
+      </div>
     </div>
 
-    <div class="w-full h-80">
+    <div class="w-full h-64 sm:h-80 lg:h-full min-h-[16rem]">
       <iframe
-        class="w-full h-full rounded"
+        class="w-full h-full rounded-xl border border-gray-200 dark:border-gray-700"
         src="https://www.google.com/maps?q=Pune&output=embed"
-        loading="lazy">
+        loading="lazy"
+        title="Irya Pharmaceuticals location map">
       </iframe>
     </div>
   </div>
 </section>
 
 <!-- ================= FOOTER ================= -->
-<footer class="py-6 border-t text-center text-sm">
-  © 2026 Irya Pharmaceuticals LLP · All rights reserved
+<footer class="py-8 border-t border-gray-200 dark:border-gray-700">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+    <img src="assets/logo.png" alt="Irya Pharmaceuticals" class="h-8 mx-auto mb-3 opacity-80" />
+    <p class="text-sm font-medium text-brand-orange mb-1">Quality Healthcare Beyond Borders.</p>
+    <p class="text-xs text-gray-500 dark:text-gray-400">© 2026 Irya Pharmaceuticals LLP · All rights reserved</p>
+  </div>
 </footer>
 
 <script src="js/main.js"></script>
